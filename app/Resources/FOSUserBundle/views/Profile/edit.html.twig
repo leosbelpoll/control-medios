@@ -1,0 +1,25 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    {% trans_default_domain 'FOSUserBundle' %}
+
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit form-centro' } }) }}
+
+    <div class="lista-errores">
+        {{ form_errors(form.username) }}
+        {{ form_errors(form.email) }}
+        {{ form_errors(form.current_password) }}
+    </div>
+
+    {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': 'form.username' | trans, 'autofocus':'' }}) }}
+    <br/>
+    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'form.email' | trans }}) }}
+    <br/>
+    {{ form_widget(form.current_password, {'attr': {'class': 'form-control', 'placeholder': 'form.current_password' | trans }}) }}
+    <br/>
+
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" class="btn btn-lg btn-primary btn-block"/>
+    </div>
+    {{ form_end(form) }}
+{% endblock fos_user_content %}

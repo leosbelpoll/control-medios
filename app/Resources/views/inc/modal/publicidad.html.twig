@@ -1,0 +1,27 @@
+{% extends 'layout/modal.html.twig' %}
+
+{% block id %}modal_publicidad{% endblock %}
+
+{% block header %}
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">{{ ('tu.publicidad' | trans ~ ' ' ~ 'aqui' | trans) | capitalize }}</h4>
+{% endblock %}
+
+{% block body %}
+    <form action="{{ path('crear_email') }}" method="post" class="form-publicidad" id="form-publicidad">
+        <input type="hidden" name="tipo_email" value="publicidad" />
+        <input type="text" id="nombre_publicidad" name="nombre_publicidad" value="" required
+               class="form-control" placeholder="{{ 'nombre'|trans }}"/>
+        <br/>
+        <input type="text" id="email_publicidad" name="email_publicidad" value="" required
+               class="form-control" placeholder="{{ 'email'|trans }}"/>
+        <br/>
+        <textarea id="mensaje_publicidad" name="mensaje_publicidad" value="" required
+                  class="form-control" placeholder="{{ 'mensaje'|trans }}"></textarea>
+    </form>
+{% endblock %}
+
+{% block botones %}
+    <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'cancelar' | trans }}</button>
+    <button type="button" class="btn btn-primary" id="btn-enviar-publicidad">{{ 'enviar' | trans }}</button>
+{% endblock %}

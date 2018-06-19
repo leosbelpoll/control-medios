@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Operacion</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ operacion.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if operacion.fecha %}{{ operacion.fecha|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Operacion</th>
+                <td>{{ operacion.operacion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('operacion_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('operacion_edit', { 'id': operacion.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+    {%- autoescape false -%}
+    {{ 'registration.email.subject'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
+    {%- endautoescape -%}
+{% endblock %}
+
+{% block body_html %}
+    {% embed 'layout/email.html.twig' %}
+        {% block body %}
+            <br/>
+            {{ 'registration.email.message' | trans({'%username%': user.username, '%confirmationUrl%': '<a class="btn btn-lg btn-primary" href="'~confirmationUrl~'">Confirmar</a>'}, 'FOSUserBundle') | raw | nl2br }}
+            <br/>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

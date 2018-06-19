@@ -1,0 +1,24 @@
+{% embed 'layout/index.html.twig' with {objetos: departamentos, pluralObjeto: 'Departamentos', singularObjeto: 'Departamento', ruta: path('departamento_new') } %}
+    {% block tabla %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departamento in departamentos %}
+            <tr>
+                <td>{{ departamento.nombre }}</td>
+                <td>{{ departamento.descripcion }}</td>
+                <td>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+{% endembed %}

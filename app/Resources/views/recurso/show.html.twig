@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+
+{#fixme poner luego el el .less#}
+{% block stylesheets %}
+    <style>
+        ul li{
+            list-style: none;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-6">
+            <h4 class="cabecera">
+                Recurso 
+                <a href="{{ path('recurso_operacion_new', {id: recurso.id}) }}" class="icono icono-operacion"><i class=" mdi mdi-worker"></i></a>
+                <a href="{{ path('recurso_edit', {id: recurso.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
+                <a href="#" class="icono icono-eliminar"><i class="icono icono-eliminar mdi mdi-window-close"></i></a>
+            </h4>
+
+            <table>
+                <tbody>
+                <tr>
+                    <th><i class="mdi mdi-monitor"></i> Componente</th>
+                    <td>{{ recurso.componente }}</td>
+                </tr>
+                <tr>
+                    <th><i class="mdi mdi-calendar"></i> Fecha de creacion</th>
+                    <td>{% if recurso.fechacreacion %}{{ recurso.fechacreacion|date('d M, Y') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th><i class="mdi mdi-view-headline"></i> Descripcion</th>
+                    <td>{{ recurso.descripcion }}</td>
+                </tr>
+                {% if recurso.fechabaja %}
+                    <tr>
+                        <th>Fechabaja</th>
+                        <td>{{ recurso.fechabaja|date('d M, Y') }}</td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            {% if recurso.recursosatributos | length > 0 %}
+                <h4 class="cabecera">Atributos</h4>
+                <table>
+                    <tbody>
+                    {% for atributo in recurso.recursosatributos %}
+                        <tr>
+                            <th><i class="mdi mdi-google-nearby"></i> {{ atributo.atributo }}</th>
+                            <td>{{ atributo.valor }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4>Este recurso no tiene asignado ningun atributo</h4>
+            {% endif %}
+        </div>
+
+    </div>
+    {% if recurso.subrecursos | length > 0 %}
+
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>Listado de Subrecursos</h4>
+            <ul>
+                {% for subrecurso in recurso.subrecursos %}
+                    <li><a href="{{ path('recurso_show', {id: subrecurso.id}) }}"><i class="mdi mdi-google-nearby"></i> {{ subrecurso }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-xs-12">
+            {% if recurso.operacionesincumplidas | length > 0 %}
+                <h4 class="cabecera bg-danger">Operaciones incumplidas</h4>
+                <table>
+                    <thead>
+                        <th></th>
+                        <th><i class="mdi mdi-calendar"></i> Fecha</th>
+                        <th><i class="mdi mdi-view-headline"></i> Descripcion</th>
+                    </thead>
+                    <tbody>
+                        {% for operacion in recurso.operacionesincumplidas %}
+                        <tr>
+                            <td style="width: 90px;">
+                                <a href="{{ path('recurso_operacion_edit', {operacion: operacion.id, recurso: operacion.id}) }}"><i class="mdi mdi-pencil icono icono-editar"></i></a>
+                                <a href=""><i class="mdi mdi-close icono icono-eliminar"></i></a>
+                            </td>
+                            <td>{{ operacion.fecha | date('d M, Y') }}</td>
+                            <td>{{ operacion.operacion }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            {% endif %}
+            <br>
+            {% if recurso.operacionesfuturas | length > 0 %}
+                <h4 class="cabecera">Operaciones a realizar</h4>
+                <table>
+                    <thead>
+                        <th></th>
+                        <th><i class="mdi mdi-calendar"></i> Fecha</th>
+                        <th><i class="mdi mdi-view-headline"></i> Descripcion</th>
+                    </thead>
+                    <tbody>
+                        {% for operacion in recurso.operacionesfuturas %}
+                        <tr>
+                            <td style="width: 90px;">
+                                <a href="{{ path('recurso_operacion_edit', {operacion: operacion.id, recurso: operacion.id}) }}"><i class="mdi mdi-pencil icono icono-editar"></i></a>
+                                <a href=""><i class="mdi mdi-close icono icono-eliminar"></i></a>
+                            </td>
+                            <td>{{ operacion.fecha | date('d M, Y') }}</td>
+                            <td>{{ operacion.operacion }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            {% endif %}
+            <br>
+            {% if recurso.operacionespasadas | length > 0 %}
+                <h4 class="cabecera">Operaciones realizadas</h4>
+                <table>
+                    <thead>
+                        <th></th>
+                        <th><i class="mdi mdi-calendar"></i> Fecha</th>
+                        <th><i class="mdi mdi-view-headline"></i> Descripcion</th>
+                    </thead>
+                    <tbody>
+                        {% for operacion in recurso.operacionespasadas %}
+                        <tr>
+                            <td style="width: 90px;">
+                                <a href="{{ path('recurso_operacion_edit', {operacion: operacion.id, recurso: operacion.id}) }}"><i class="mdi mdi-pencil icono icono-editar"></i></a>
+                                <a href=""><i class="mdi mdi-close icono icono-eliminar"></i></a>
+                            </td>
+                            <td>{{ operacion.fecha | date('d M, Y') }}</td>
+                            <td>{{ operacion.operacion }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

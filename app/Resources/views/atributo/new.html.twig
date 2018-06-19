@@ -1,0 +1,6 @@
+{% embed 'layout/new.html.twig' with {singularObjeto: 'Atributo'} %}
+    {% block interior_formulario %}
+        {{ form_row(form.nombre, {'attr': {'autofocus':'' }}) }}
+        {{ form_rest(form) }}
+    {% endblock %}
+{% endembed %}

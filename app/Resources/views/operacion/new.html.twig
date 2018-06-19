@@ -1,0 +1,5 @@
+{% embed 'layout/new.html.twig' with {singularObjeto: 'Operacion', rutaAtras: path('recurso_show', {id: recurso.id})} %}
+    {% block interior_formulario %}
+        {{ form_rest(form) }}
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="texto-grande">{{'error.servidor' | trans}}</h2>
+        <span>{{'contacte.admin' | trans}}</span>
+        <p>{{ exception.message }}</p>
+        <hr>
+    </div>
+{% endblock %}

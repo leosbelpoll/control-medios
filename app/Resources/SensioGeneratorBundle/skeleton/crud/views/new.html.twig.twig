@@ -1,0 +1,10 @@
+{% block extends %}
+{{ "{% embed 'layout/new.html.twig' with {singularObjeto: '"}}{{ entity_singularized|capitalize }}{{ "'} %}" }}
+{% endblock extends %}
+
+    {% block body %}
+    {{ "{% block interior_formulario %}" }}
+            {{ '{{ form_widget(form) }}' }}
+    {{ "{% endblock %}" }}
+{{ "{% endembed %}" }}
+{% endblock body %}

@@ -1,0 +1,29 @@
+{% embed 'layout/index.html.twig' with {objetos: componentes, pluralObjeto: 'Componentes', singularObjeto: 'Componente', ruta: path('componente_new') } %}
+    {% block tabla %}
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>padre</th>
+                <th>Descripcion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for componente in componentes %}
+            <tr>
+                <td width="50px">{% if componente.icono %}<img src="{{asset(componente.icono)}}" alt="" width="20px">{% else %}<i class="mdi mdi-close"></i>{% endif %}</td>
+                <td>{{ componente.nombre }}</td>
+                <td>{{ componente.padre }}</td>
+                <td>{{ componente.descripcion }}</td>
+                <td>
+                    <a href="{{ path('componente_edit', {id: componente.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
+                    <a href="#" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,12 @@
+{% embed 'layout/edit.html.twig' with {singularObjeto: 'Recurso: '~componente.nombre, rutaAtras: path('recurso_index_by_componente', {id: componente.id})} %}
+    {% block interior_formulario %}
+        {{ form_row(edit_form.responsable) }}
+        {{ form_row(edit_form.fechacreacion) }}
+        {% for atributo in edit_form.recursosatributos %}
+            {{ form_row(atributo, {'label':atributo.vars.value.atributo}) }}
+        {% endfor %}
+        {{ form_row(edit_form.descripcion) }}
+        {{ form_row(edit_form.padre) }}
+        {{ form_row(edit_form.fechabaja) }}
+    {% endblock %}
+{% endembed %}

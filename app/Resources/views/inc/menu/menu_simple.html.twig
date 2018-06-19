@@ -1,0 +1,1 @@
+<li{% if posiblesRutas is defined %} {% if app.request.get('_route') in posiblesRutas %}class="active"{% endif %}{% endif %}><a href="{{ ruta }}">{% if icono is defined %} <img src="{{asset(icono)}}" width="15px">{% endif %} {{ titulo }}</a></li>

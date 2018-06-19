@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'layout/form/fields.html.twig' %}
+
+{% block body %}
+    <h4 class="texto-centro">Adicionar {{ singularObjeto }}</h4>
+
+    <div class="form-pequenno-editar">
+
+        <hr/>
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {% block interior_formulario %}{% endblock %}
+        <br>
+        <div class="col-xs-6 sin-padding">
+        <button class="bt bt-primary"><i class="fa fa-plus-circle"></i> Adicionar</button>
+        </div>
+        <div class="col-xs-6 sin-padding">
+        <a href="{% if rutaAtras is defined %}{{ rutaAtras }}{% else %}{{ path(singularObjeto | lower | replace({' ':'', 'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u'}) ~'_index') }}{% endif %}" class="bt bt-default"><i class="fa fa-mail-reply-all"></i> Ir Atrás</a>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+{% endblock %}

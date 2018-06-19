@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{#fixme poner luego el el .less#}
+{% block stylesheets %}
+    <style>
+        ul li{
+            list-style: none;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="{{path('imprimir_ficha_tecnica', {id: recurso.id})}}" class="btn btn-primary"><i class="mdi mdi-printer"></i> Imprimir</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="5" class="texto-centro"><h4>MODELO DE FICHA TECNICA DEL EQUIPAMIENTO INFORMATICA</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Identificador de la PC</th>
+                        <td colspan="2">{{recurso.getValorAtributo('Numero de Inventario')}}</td>
+                        <th>Numero Consecutivo</th>
+                        <td>{{recurso.getValorAtributo('Numero Consecutivo')}}</td>
+                    </tr>
+                    <tr>
+                        <th>Area</th>
+                        <td>{{recurso.responsable.departamento}}</td>
+                        <td><strong style="margin-right: 20px">Fecha:</strong>{{recurso.fechacreacion | date('d M, Y')}}</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>Responsable de la PC</th>
+                        <td colspan="4">{{recurso.responsable}}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre del Dominio</th>
+                        <td>{{recurso.getValorAtributo('Nombre del Dominio')}}</td>
+                        <th>Sistema Operativo</th>
+                        <td colspan="2">{{recurso.getValorAtributo('Sistema Operativo')}}</td>
+                    </tr>
+                    <tr>
+                        <th>Direccion IP</th>
+                        <td>{{recurso.getValorAtributo('Direccion IP')}}</td>
+                        <th>Grupo de Red</th>
+                        <td colspan="2">{{recurso.getValorAtributo('Grupo de Red')}}</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <td class="texto-centro" colspan="5"><h4>Detalles de los numeros de serie de las partes y piezas de la PC</h4></td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Equipo</th>
+                        <th>No. Inventario</th>
+                        <th>Marca</th>
+                        <th colspan="2">RAYYARRR</th>
+                    </tr>
+                    <tr>
+                        <th>Unidad Central</th>
+                        <td>{{recurso.getValorAtributo('Numero de Inventario')}}</td>
+                        <td>{{recurso.getValorAtributo('Marca')}}</td>
+                        <td colspan="2">RAYYARRR</td>
+                    </tr>
+                    <tr>
+                        <th>Sello Unidad Central</th>
+                        <td colspan="4" style="font-size: 1.3em"><strong>{{recurso.getValorAtributo('Sello')}}</strong></td>
+                    </tr>
+                </tbody>
+
+            <!-- ****** COMPONENTES *********** -->
+
+                <thead>
+                    <td colspan="5" class="texto-centro"><h4>Componentes</h4></td>
+                </thead>
+                <thead>
+                    <th>Componente</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>No. Serie</th>
+                    <th>Cap o Vel</th>
+                </thead>
+                <tbody>
+                    {% for subrecurso in recurso.subrecursos  %}
+                        {% if subrecurso.componente != 'Programa Instalado' %}
+                        <tr>
+                            <th>{{ subrecurso.componente }}</th>
+                            <td>{{subrecurso.getValorAtributo('Modelo')}}</td>
+                            <td>{{subrecurso.getValorAtributo('Marca')}}</td>
+                            <td>{{subrecurso.getValorAtributo('No. Serie')}}</td>
+                            {% if subrecurso.getValorAtributo('Capacidad') %}
+                            <td>{{subrecurso.getValorAtributo('Capacidad')}}</td>
+                            {% elseif subrecurso.getValorAtributo('Velocidad') %}
+                            <td>{{subrecurso.getValorAtributo('Velocidad')}}</td>
+                            {% else %}
+                            <td class="td-bloqueado"></td>
+                            {% endif %}
+                        </tr>
+                        {% endif %}
+                    {% else %}
+                        <td colspan="5">Esta Unidad Central no contiene componentes</td>
+                    {% endfor %}
+                </tbody>
+
+            <!-- ******  PROGRAMAS INSTALADOS *********** -->
+
+                <thead>
+                    <td colspan="5" class="texto-centro"><h4>Programas Instalados</h4></td>
+                </thead>
+                <thead>
+                    <th>Nombre</th>
+                    <th colspan="4">Descripcion</th>
+                </thead>
+                <tbody>
+                    {% for subrecurso in recurso.subrecursos  %}
+                        {% if subrecurso.componente == 'Programa Instalado' %}
+                        <tr>
+                            <th>{{ subrecurso.getValorAtributo('Nombre') }}</th>
+                            <td colspan="4">{{subrecurso.descripcion}}</td>
+                        </tr>
+                        {% endif %}
+                    {% else %}
+                        <td colspan="5">Esta Unidad Central no contiene Programas Instalados</td>
+                    {% endfor %}
+                </tbody>
+
+
+                <thead>
+                    <td colspan="5" style="padding-top: 70px">
+                        Por medio de la presente yo: <strong style="font-weight: bold; text-decoration: underline">{{recurso.responsable}}</strong>, con cargo u ocupacion de <strong style="font-weight: bold; text-decoration: underline">{{recurso.responsable.cargo}}</strong>, me hago responsable del equipo al cual hace mencion este Expediente, la cual cuenta con los medios antes mencionados en la parte de Hardware Instalados, ademas de asumir el cuidado externo e interno en cuanto a Software Instalados y la actualizacion del Antivirus, asi como reportar cualquier tipo de violacion a la Seguridad Informatica, la rotura de algun componente del equipo ademas de cuidar y conservar el expediente tecnico de la PC asi como su sello de Seguridad.
+                    </td>
+                </thead>
+                <thead>
+                    <th colspan="2" style="border: none; padding-top: 70px">Elaborado por:</th>
+                    <th style="border: none; padding-top: 70px">Fecha de elaboracion</th>
+                    <th colspan="2" style="border: none; padding-top: 70px; text-align: right">Director de la Entidad</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="border: none">Arahi Y. Conyedo Perez</td>
+                        <td style="border: none">{{recurso.fechacreacion | date('d M, Y')}}</td>
+                        <td colspan="2" style="border: none; text-align: right">Rosa M. Delgado Trujillo</td>
+                    </tr>
+                    <tr>
+                        <td style="border: none">Esp. Seguridad Informatica</td>
+                        <td style="border: none"></td>
+                        <td style="border: none"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

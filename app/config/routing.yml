@@ -1,0 +1,38 @@
+app_componente:
+    resource: "@AppBundle/Controller/ComponenteController.php"
+    type:     annotation
+
+app_departamento:
+    resource: "@AppBundle/Controller/DepartamentoController.php"
+    type:     annotation
+
+app_persona:
+    resource: "@AppBundle/Controller/PersonaController.php"
+    type:     annotation
+
+app_operacion:
+    resource: "@AppBundle/Controller/OperacionController.php"
+    type:     annotation
+
+app_recurso_atributo:
+    resource: "@AppBundle/Controller/RecursoAtributoController.php"
+    type:     annotation
+
+app_recurso:
+    resource: "@AppBundle/Controller/RecursoController.php"
+    type:     annotation
+
+app_atributo:
+    resource: "@AppBundle/Controller/AtributoController.php"
+    type:     annotation
+
+app_componente:
+    resource: "@AppBundle/Controller/ComponenteController.php"
+    type:     annotation
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

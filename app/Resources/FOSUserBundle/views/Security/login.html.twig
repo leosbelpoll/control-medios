@@ -1,0 +1,36 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    {% trans_default_domain 'FOSUserBundle' %}
+
+
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="form-login">
+        {% if error %}
+            <div class="lista-errores">
+                <ul>
+                    <li>{{ error.messageKey|trans(error.messageData, 'security') }}</li>
+                </ul>
+
+            </div>
+        {% endif %}
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+        {% endif %}
+
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+               class="form-control" placeholder="{{ 'security.login.username'|trans }}" autofocus/>
+        <br/>
+        <input type="password" id="password" name="_password" required="required" class="form-control"
+               placeholder="{{ 'security.login.password'|trans }}"/>
+        <br/>
+        {#<input type="checkbox" id="remember_me" name="_remember_me" value="on"/>#}
+        {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+        {#<br/>#}
+        <br/>
+        <button id="_submit" name="_submit"
+                class="bt bt-primary ancho-full">{{ 'security.login.submit'|trans }}</button>
+        <!-- <div class="text-center">
+            <a href="{{ path('fos_user_resetting_request') }}">{{ 'olvido.contrasenna'|trans({}, 'messages') }}</a>
+        </div> -->
+    </form>
+{% endblock fos_user_content %}

@@ -1,0 +1,609 @@
+@import "variables.less";
+
+html{
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 80px;
+  padding-top: 90px;
+
+  a:focus, a:active,a:hover{
+    outline:0;
+    text-decoration: none;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  footer {
+    background: #222;
+    color: lightgrey;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    a {
+      color: grey !important;
+      text-decoration: none;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    .pieApp {
+      padding: 10px;
+      background: #000000;
+      color: dimgrey;
+      text-align: center;
+      font-size: .8em;
+    }
+  }
+
+  .alertify {
+    top: 80px;
+    border-radius: 0;
+
+    .btn {
+      margin-left: 10px;
+    }
+  }
+
+  .alertify-buttons {
+    background: white;
+  }
+
+  .alertify-log {
+    border-radius: 0;
+    border: none;
+    text-shadow: none;
+    color: white;
+    background: #000000;
+    margin-bottom: 30px;
+  }
+
+  .alertify-log-success {
+    background: #4cae4c;
+    border: solid 2px #2d8727;
+    margin-bottom: 30px;
+
+    &:before {
+      content: "\f00c";
+      font-family: 'FontAwesome';
+      src: url('../vendor/font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+      src: url('../vendor/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../vendor/font-awesome/fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../vendor/font-awesome/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .alertify-log-error {
+    background: #d9534f;
+    border: solid 2px #833835;
+    margin-bottom: 30px;
+    position: relative;
+
+    &:before {
+      content: "\f00d";
+      font-family: 'FontAwesome';
+      src: url('../vendor/font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+      src: url('../vendor/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../vendor/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../vendor/font-awesome/fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../vendor/font-awesome/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .pagination > li:last-child > a {
+    border-radius: 0;
+  }
+
+  .pagination > li:first-child > span {
+    border-radius: 0;
+  }
+
+  .pagination > li:last-child > span {
+    border-radius: 0;
+  }
+
+  .pagination > li:first-child > a {
+    border-radius: 0;
+  }
+
+  .navigation {
+    text-align: center;
+  }
+
+  .texto-grande{
+    color: grey;
+    font-size: 1.5em;
+    font-weight: lighter;
+  }
+
+  .texto-pequenno{
+    color: grey;
+    font-size: 0.85em;
+  }
+
+  .mensaje-success {
+    text-align: center;
+
+    i {
+      color: #00bc00;
+      font-weight: bold;
+      font-size: 2em;
+      text-shadow: 1px 1px 0px #0c6306;
+      margin-right: 10px;
+    }
+    span {
+      font-size: 1.1em;
+    }
+  }
+
+  .mensaje-error {
+    text-align: center;
+
+    i {
+      color: #c10005;
+      font-weight: bold;
+      font-size: 2em;
+      text-shadow: 1px 1px 0px #5d0500;
+      margin-right: 10px;
+    }
+    span {
+      font-size: 1.1em;
+    }
+  }
+
+  .verificacion-robots {
+    display: none;
+  }
+
+  .redesSociales {
+    float: right;
+
+    a {
+
+      i {
+        background: lightgrey;
+        padding: 5px;
+        color: black;
+        display: block;
+        margin-top: 5px;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        i {
+
+          &.fa-google-plus {
+            background: #cb3f22;
+            color: white;
+          }
+
+          &.fa-facebook {
+            background: #4a6d9d;
+            color: white;
+          }
+
+          &.fa-twitter {
+            background: #3bc1ed;
+            color: white;
+          }
+
+          &.fa-youtube {
+            background: #bf2f29;
+            color: white;
+          }
+          &.fa-linkedin {
+            background: #0b7bb5;
+            color: white;
+          }
+        }
+      }
+    }
+
+  }
+
+  .elementoIndividualCargando {
+    position: relative;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(0, 0, 0, .8);
+      top: 0;
+      left: 0;
+      z-index: 10000000;
+    }
+
+    &:before {
+      content: "";
+      width: 12%;
+      height: 12%;
+      background: url('../img/cargando.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 44%;
+      left: 44%;
+      z-index: 10000001;
+      margin: 0 auto;
+    }
+  }
+
+  .pantallaCargando {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+
+    &:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background: url('../img/cargando.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      z-index: 3000002;
+      margin: 0 auto;
+    }
+
+  }
+
+  .table.tabla-ficha-tecnica{
+    tr:nth-child(2n-1){
+      th{
+        background: rgb(248, 248, 248);
+        width: 50%;
+      }
+    }
+  }
+
+  .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    vertical-align: middle;
+  }
+
+  .form-login, .form-centro {
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .form-registro {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  .lista-errores {
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-image: none;
+        border-radius: 4px;
+        background: #d9534f !important;
+        color: white;
+        font-size: .9em;
+        padding: 2px 5px;
+      }
+    }
+  }
+
+  .submenu-programa {
+    padding: 0;
+    font-family: serif;
+
+    a {
+      color: #393939;
+
+      li {
+        list-style: none;
+        background-image: linear-gradient(#ffffff, #e9e9e9);
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-bottom: 5px;
+        border-radius: 15px;
+
+        &:hover {
+          background-image: linear-gradient(#ffffff, #d1d1d1);
+        }
+
+        &:active {
+          background-image: linear-gradient(#ffffff, #a1a1a1);
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .filtroVehiculos {
+    background: #ededed;
+    padding: 5px 10px;
+
+    select {
+      border: none;
+      color: grey;
+      background: #EDEDED;
+      margin-right: 15px;
+      padding-right: 10px;
+
+      option {
+        background: #d4d4d4;
+      }
+    }
+  }
+
+  .img-detalles {
+    width: 30%;
+    margin-right: 3%;
+    margin-bottom: 35px;
+
+//    &:nth-child(3n) {
+//      margin-right: 0px;
+//      float: right;
+//    }
+  }
+
+  .manual-detalles {
+    width: 7%;
+    display: inline-block;
+    float: left;
+    margin-top: 0;
+    height: 125px;
+    margin-right: 5%;
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+  .cabecera-idioma{
+    clear: left;
+  }
+
+  .img-bg-detalles{
+    width: 30%;
+    margin-right: 3%;
+    margin-bottom: 35px;
+    text-align: center;
+    display: inline-block;
+
+//    &:nth-child(3n) {
+//      margin-right: 0px;
+//      float: right;
+//    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .panel-group .panel {
+    border-radius: 0;
+  }
+
+  .panel {
+    border-radius: 0;
+  }
+
+  .publicidad {
+
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .tu-publicidad-aqui {
+    background: #1f1f1f;
+    text-align: center;
+    padding: 10px 10px 5px 10px;
+    border: solid grey 3px;
+    margin-bottom: 20px;
+    display: block;
+
+    .tu-publicidad {
+      display: block;
+      color: #e8e8e8;
+      font-size: 1.3em;
+    }
+
+    .aqui-publicidad {
+      display: block;
+      color: #37c1f5;
+      font-size: 4em;
+      font-family: "Times New Roman";
+      text-shadow: 1px 1px 0px white;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .menus-programa {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 70%;
+
+    .menu-programa {
+      text-align: center;
+      color: grey;
+      display: inline-block;
+      margin-right: 70px;
+      font-size: 1.4em;
+      font-family: serif;
+
+      img {
+        display: block;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .especificacionesVehiculos {
+    font-weight: bold;
+
+    a {
+      color: #333;
+      font-size: .75em;
+      border-right: solid gray 1px;
+      padding-right: 5px;
+      display: inline-block;
+
+      &:last-child{
+        border-right: none;
+        padding-right: 0;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+  }
+
+  .pull-left {
+    margin-top: 0 !important;
+  }
+
+  .form-control {
+    border-radius: 0;
+  }
+
+  .btn {
+    border-radius: 0;
+    border: none;
+  }
+
+  .footerFijo {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .modal-content {
+    border-radius: 0;
+  }
+
+  .btn-default {
+    background: #efefef;
+  }
+}
+
+.navbar-nav>li>.dropdown-menu {
+  border-radius: 0;
+
+  li.active{
+    background: darken(@colorPrimario, 10%);
+
+    a{
+      background: none;
+    }
+  }
+
+  li>a{
+    transition: all .3s ease;
+
+    &:hover{
+      background: @colorPrimario;
+      color: white;
+    }
+  }
+}
+
+.navbar-inverse .navbar-nav > .active > a{
+  background: darken(@colorPrimario, 10%);
+
+  &:hover{
+    background: darken(@colorPrimario, 15%);
+  }
+
+  &:active, &:focus{
+    background: darken(@colorPrimario, 10%);
+  }
+}
+
+.datepicker{
+  z-index:  5000 !important;
+}
+
+::selection {
+    background: fade(@colorPrimario, 20%);
+    color: darken(@colorPrimario, 10%);
+}
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type="date"]::-webkit-input-placeholder{
+    visibility: hidden !important;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.td-bloqueado{
+  padding: none !important;
+  background: fade(grey, 20%) !important;
+}
+
+.btn-primary{
+  background: @colorPrimario;
+
+  &:hover, &:focus{
+    background: darken(@colorPrimario, 10%);
+  }
+}
+
+.cabecera{
+  background: @colorPrimario;
+  padding: 10px;
+  color: white;
+
+  .icono{
+    color: white !important;
+    font-size: 1em;
+  }
+}
+
+.bg-danger{
+  background: @colorDanger;
+}

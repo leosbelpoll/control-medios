@@ -1,0 +1,12 @@
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% if icono is defined %}<i
+            class="mdi mdi-{{ icono }}"></i>{% endif %}
+        {{ titulo }} <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        {% if subMenus is defined %}
+        {% for subMenu in subMenus %}
+            {% include 'inc/menu/menu_simple.html.twig' with {posiblesRutas: subMenu.posiblesRutas, ruta: subMenu.ruta, icono: subMenu.icono, titulo: subMenu.titulo} %}
+        {% endfor %}
+        {% endif %}
+    </ul>
+</li>

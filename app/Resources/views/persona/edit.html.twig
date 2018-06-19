@@ -1,0 +1,6 @@
+{% embed 'layout/edit.html.twig' with {singularObjeto: 'Persona'} %}
+    {% block interior_formulario %}
+        {{ form_row(edit_form.nombre, {'attr': {'autofocus':'' }}) }}
+        {{ form_rest(edit_form) }}
+    {% endblock %}
+{% endembed %}

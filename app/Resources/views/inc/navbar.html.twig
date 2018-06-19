@@ -1,0 +1,68 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ path('inicio') }}">
+                <img src="{{ asset('img/logo.png') }}" alt="" width="40px"/>
+                Control de Medios
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li {% if app.request.get('_route') == 'inicio' %}class="active"{% endif %}><a
+                            href="{{ path('inicio') }}"><i class="mdi mdi-home"></i> Inicio</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="mdi mdi-settings"></i>
+                        Gestionar <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li {% if app.request.get('_route')[0:11] == 'componente_' %}class="active"{% endif %}><a
+                                    href="{{ path('componente_index') }}"><i class="mdi mdi-settings"></i>
+                                Componentes</a></li>
+                        <li {% if app.request.get('_route')[0:9] == 'atributo_' %}class="active"{% endif %}><a
+                                    href="{{ path('atributo_index') }}"><i
+                                        class="mdi mdi-checkbox-multiple-marked-circle"></i> Atributos</a></li>
+                        <li {% if app.request.get('_route')[0:8] == 'persona_' %}class="active"{% endif %}><a
+                                    href="{{ path('persona_index') }}"><i class="mdi mdi-account-multiple"></i> Personas</a>
+                        </li>
+                        <li {% if app.request.get('_route')[0:13] == 'departamento_' %}class="active"{% endif %}><a
+                                    href="{{ path('departamento_index') }}"><i class="mdi mdi-home-outline"></i>
+                                Departamentos</a></li>
+                        <li {% if app.request.get('_route')[0:13] == 'operacion_' %}class="active"{% endif %}><a
+                                    href="{{ path('operacion_index') }}"><i class="mdi mdi-worker"></i>
+                                Operaciones</a></li>
+                    </ul>
+                </li>
+
+                {{ render(controller("AppBundle:Front:renderSubMenuRecursos")) }}
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if not app.user %}
+                    <li {% if app.request.get('_route') == 'fos_user_security_login' %}class="active"{% endif %}><a
+                                href="{{ path('fos_user_security_login') }}"><i class="mdi mdi-login-variant"></i> Entrar</a></li>
+                    <li {% if app.request.get('_route') == 'fos_user_registration_register' %}class="active"{% endif %}>
+                        {#<a href="{{ path('fos_user_registration_register') }}">Registrarse</a></li>#}
+                {% else %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                    class="fa fa-user"></i> {{ app.user }} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('fos_user_profile_edit') }}"><i class="fa fa-user"></i> Perfil</a></li>
+                            <li><a href="{{ path('fos_user_change_password') }}"><i class="fa fa-asterisk"></i> Cambiar
+                                    contraseña</a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-power-off"></i>
+                                    Salir</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>

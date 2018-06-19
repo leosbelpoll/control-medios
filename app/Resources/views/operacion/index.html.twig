@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table>
+        <thead>
+            <tr>
+                <th>Recurso</th>
+                <th>Fecha</th>
+                <th>Operacion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for operacion in operacions %}
+            <tr>
+                <td>{{ operacion.recurso }}</td>
+                <td>{% if operacion.fecha %}{{ operacion.fecha|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ operacion.operacion }}</td>
+                <td>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

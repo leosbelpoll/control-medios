@@ -1,0 +1,691 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="es" source-language="es" target-language="en" datatype="plaintext">
+	<body>
+        <!--primera actualizacion-->
+		<trans-unit id="101">
+			<source>menu.inicio</source>
+			<target>Home</target>
+		</trans-unit>
+		<trans-unit id="102">
+			<source>menu.coches</source>
+			<target>Cars</target>
+		</trans-unit>
+		<trans-unit id="103">
+			<source>menu.motos</source>
+			<target>Motorcycles</target>
+		</trans-unit>
+		<trans-unit id="104">
+			<source>menu.login</source>
+			<target>Sing in</target>
+		</trans-unit>
+		<trans-unit id="105">
+			<source>menu.registrarse</source>
+			<target>Sing up</target>
+		</trans-unit>
+		<trans-unit id="106">
+			<source>menu.logout</source>
+			<target>Sing out</target>
+		</trans-unit>
+        <trans-unit id="107">
+            <source>menu.configuracion</source>
+            <target>Configuration</target>
+        </trans-unit>
+        <trans-unit id="108">
+            <source>menu.archivos</source>
+            <target>Files</target>
+        </trans-unit>
+        <trans-unit id="109">
+            <source>menu.facturacion</source>
+            <target>Billing</target>
+        </trans-unit>
+        <trans-unit id="110">
+            <source>menu.herramientas</source>
+            <target>Tools</target>
+        </trans-unit>
+        <trans-unit id="111">
+            <source>menu.estadisticas</source>
+            <target>Statistics</target>
+        </trans-unit>
+        <trans-unit id="112">
+            <source>menu.perfil</source>
+            <target>Profile</target>
+        </trans-unit>
+
+
+
+        <!--segunda actualizacion-->
+
+        <trans-unit id="7">
+            <source>vehiculos.subidos</source>
+            <target>Uploaded Vehicles</target>
+        </trans-unit>
+        <trans-unit id="8">
+            <source>marca</source>
+            <target>Brand</target>
+        </trans-unit>
+        <trans-unit id="9">
+            <source>modelo</source>
+            <target>Model</target>
+        </trans-unit>
+        <trans-unit id="10">
+            <source>anno</source>
+            <target>Year</target>
+        </trans-unit>
+        <trans-unit id="11">
+            <source>ficha.tecnica</source>
+            <target>Data sheet</target>
+        </trans-unit>
+        <trans-unit id="12">
+            <source>despiece</source>
+            <target>Exploded view</target>
+        </trans-unit>
+        <trans-unit id="13">
+            <source>foto</source>
+            <target>Photo</target>
+        </trans-unit>
+        <trans-unit id="14">
+            <source>video</source>
+            <target>Video</target>
+        </trans-unit>
+        <trans-unit id="15">
+            <source>manual</source>
+            <target>Manual</target>
+        </trans-unit>
+        <trans-unit id="16">
+            <source>catalogo</source>
+            <target>Catalogue</target>
+        </trans-unit>
+        <trans-unit id="17">
+            <source>esquema.electrico</source>
+            <target>Electric scheme</target>
+        </trans-unit>
+        <trans-unit id="18">
+            <source>vehiculos.actualizados</source>
+            <target>Updated Vehicles</target>
+        </trans-unit>
+        <trans-unit id="19">
+            <source>ultimos.30.dias</source>
+            <target>The last 30 days</target>
+        </trans-unit>
+        <trans-unit id="20">
+            <source>ultimos.60.dias</source>
+            <target>The last 60 days</target>
+        </trans-unit>
+        <trans-unit id="21">
+            <source>tu.publicidad</source>
+            <target>Your Advertising</target>
+        </trans-unit>
+        <trans-unit id="22">
+            <source>aqui</source>
+            <target>Here</target>
+        </trans-unit>
+        <trans-unit id="23">
+            <source>pagina</source>
+            <target>Page</target>
+        </trans-unit>
+        <trans-unit id="24">
+            <source>anterior</source>
+            <target>Previous</target>
+        </trans-unit>
+        <trans-unit id="25">
+            <source>elementos.por.pagina</source>
+            <target>Items per page</target>
+        </trans-unit>
+        <trans-unit id="26">
+            <source>manuales.taller</source>
+            <target>Workshop Manuals</target>
+        </trans-unit>
+        <trans-unit id="27">
+            <source>manuales.usuarios</source>
+            <target>User Manuals</target>
+        </trans-unit>
+
+        <!-- tercera actualizacion -->
+        <trans-unit id="28">
+            <source>menu.software</source>
+            <target>Software</target>
+        </trans-unit>
+        <trans-unit id="29">
+            <source>ultimos.3.meses</source>
+            <target>The last 3 months</target>
+        </trans-unit>
+        <trans-unit id="30">
+            <source>ultimos.6.meses</source>
+            <target>The last 6 months</target>
+        </trans-unit>
+
+        <!--cuarta actualizacion-->
+
+        <trans-unit id="31">
+            <source>contacto</source>
+            <target>Contact</target>
+        </trans-unit>
+        <trans-unit id="32">
+            <source>soporte</source>
+            <target>Support</target>
+        </trans-unit>
+
+        <!--botones-->
+        <trans-unit id="2001">
+            <source>aceptar</source>
+            <target>Accept</target>
+        </trans-unit>
+        <trans-unit id="2002">
+            <source>cancelar</source>
+            <target>Cancel</target>
+        </trans-unit>
+        <trans-unit id="2003">
+            <source>enviar</source>
+            <target>Submit</target>
+        </trans-unit>
+
+
+
+        <!--traduccion de excepciones-->
+        <trans-unit id="1001">
+            <source>excepcion.ruta.no.encontrada</source>
+            <target>The address you wish to access does not exist.</target>
+        </trans-unit>
+        <trans-unit id="1002">
+            <source>excepcion.idioma.no.encontrado</source>
+            <target>The language inserted does not exist.</target>
+        </trans-unit>
+
+
+
+        <!--Alertas-->
+        <trans-unit id="3001">
+            <source>mensaje.enviado</source>
+            <target>The message was sent correctly</target>
+        </trans-unit>
+        <trans-unit id="3002">
+            <source>mensaje.no.enviado</source>
+            <target>An error has occurred when sending the message</target>
+        </trans-unit>
+
+        <!--Formularios-->
+        <trans-unit id="4001">
+            <source>nombre</source>
+            <target>Name</target>
+        </trans-unit>
+        <trans-unit id="4002">
+            <source>titulo</source>
+            <target>Title</target>
+        </trans-unit>
+        <trans-unit id="4003">
+            <source>mensaje</source>
+            <target>Message</target>
+        </trans-unit>
+        <trans-unit id="4004">
+            <source>olvido.contrasenna</source>
+            <target>Have you forgotten your password?</target>
+        </trans-unit>
+        <trans-unit id="4005">
+            <source>email</source>
+            <target>Email</target>
+        </trans-unit>
+        <trans-unit id="4006">
+            <source>name</source>
+            <target>Full name</target>
+        </trans-unit>
+        <trans-unit id="4007">
+            <source>buscar</source>
+            <target>Search</target>
+        </trans-unit>
+
+        <!--Validaciones-->
+        <trans-unit id="5001">
+            <source>introduzca.datos.formulario</source>
+            <target>Fill in the entire form</target>
+        </trans-unit>
+        <trans-unit id="5002">
+            <source>email.invalido</source>
+            <target>Wrong email</target>
+        </trans-unit>
+
+        <!--submenus-->
+        <trans-unit id="6001">
+            <source>submenu.registro.vehiculo</source>
+            <target>Vehicle registration</target>
+        </trans-unit>
+        <trans-unit id="6002">
+            <source>submenu.operaciones.mano.obra</source>
+            <target>M.D.O Operations</target>
+        </trans-unit>
+        <trans-unit id="6003">
+            <source>submenu.familia.recambio</source>
+            <target>Family spare parts</target>
+        </trans-unit>
+        <trans-unit id="6004">
+            <source>submenu.marcas.recambios</source>
+            <target>Brands spare parts</target>
+        </trans-unit>
+        <trans-unit id="6005">
+            <source>submenu.departamentos.taller</source>
+            <target>Company Departments</target>
+        </trans-unit>
+        <trans-unit id="6006">
+            <source>submenu.comentarios</source>
+            <target>Offers / Comments</target>
+        </trans-unit>
+        <trans-unit id="6007">
+            <source>submenu.numeros.documentos</source>
+            <target>Document numbers</target>
+        </trans-unit>
+        <trans-unit id="6008">
+            <source>submenu.formas.pago</source>
+            <target>Payment Methods</target>
+        </trans-unit>
+        <trans-unit id="6009">
+            <source>submenu.permisos</source>
+            <target>Permissions</target>
+        </trans-unit>
+        <trans-unit id="6010">
+            <source>submenu.talonarios</source>
+            <target>Checkbooks</target>
+        </trans-unit>
+        <trans-unit id="6011">
+            <source>submenu.copia.seguridad</source>
+            <target>Backup copy</target>
+        </trans-unit>
+        <trans-unit id="6012">
+            <source>submenu.seguridad.formularios</source>
+            <target>Security forms</target>
+        </trans-unit>
+        <trans-unit id="6013">
+            <source>submenu.clientes</source>
+            <target>Customers</target>
+        </trans-unit>
+        <trans-unit id="6014">
+            <source>submenu.vehiculos</source>
+            <target>Vehicles</target>
+        </trans-unit>
+        <trans-unit id="6015">
+            <source>submenu.proveedores</source>
+            <target>Suppliers</target>
+        </trans-unit>
+        <trans-unit id="6016">
+            <source>submenu.empleados</source>
+            <target>Employees</target>
+        </trans-unit>
+        <trans-unit id="6017">
+            <source>submenu.recambios</source>
+            <target>Spare parts</target>
+        </trans-unit>
+        <trans-unit id="6018">
+            <source>submenu.compra.venta</source>
+            <target>Purchase / Sale</target>
+        </trans-unit>
+        <trans-unit id="6019">
+            <source>submenu.ficha.tecnica</source>
+            <target>Data sheet</target>
+        </trans-unit>
+        <trans-unit id="6020">
+            <source>submenu.transportista</source>
+            <target>Carrier</target>
+        </trans-unit>
+        <trans-unit id="6021">
+            <source>submenu.listado.vehiculos</source>
+            <target>Vehicle list</target>
+        </trans-unit>
+        <trans-unit id="6022">
+            <source>submenu.matriculas</source>
+            <target>License plates</target>
+        </trans-unit>
+        <trans-unit id="6023">
+            <source>submenu.maquinaria</source>
+            <target>Machinery</target>
+        </trans-unit>
+        <trans-unit id="6024">
+            <source>submenu.or.factura</source>
+            <target>O.R Invoice</target>
+        </trans-unit>
+        <trans-unit id="6025">
+            <source>submenu.ventas</source>
+            <target>Sales</target>
+        </trans-unit>
+        <trans-unit id="6026">
+            <source>submenu.ventas.rapidas</source>
+            <target>Quick sales</target>
+        </trans-unit>
+        <trans-unit id="6027">
+            <source>submenu.pedidos</source>
+            <target>Orders</target>
+        </trans-unit>
+        <trans-unit id="6028">
+            <source>submenu.caja</source>
+            <target>Box</target>
+        </trans-unit>
+        <trans-unit id="6029">
+            <source>submenu.calendario</source>
+            <target>Calendar</target>
+        </trans-unit>
+        <trans-unit id="6030">
+            <source>submenu.agenda</source>
+            <target>Diary</target>
+        </trans-unit>
+        <trans-unit id="6031">
+            <source>submenu.agenda.taller</source>
+            <target>Workshop Agenda</target>
+        </trans-unit>
+        <trans-unit id="6032">
+            <source>submenu.impresos.trafico</source>
+            <target>Traffic Printed</target>
+        </trans-unit>
+        <trans-unit id="6033">
+            <source>submenu.matriculas</source>
+            <target>License plates</target>
+        </trans-unit>
+        <trans-unit id="6034">
+            <source>submenu.telefonos.utilidad</source>
+            <target>Useful Phones</target>
+        </trans-unit>
+        <trans-unit id="6035">
+            <source>submenu.fax</source>
+            <target>Fax</target>
+        </trans-unit>
+        <trans-unit id="6036">
+            <source>submenu.sms.certificaciones</source>
+            <target>SMS Certifications</target>
+        </trans-unit>
+        <trans-unit id="6037">
+            <source>submenu.envios</source>
+            <target>Shipping</target>
+        </trans-unit>
+        <trans-unit id="6038">
+            <source>submenu.sobres</source>
+            <target>Envelopes</target>
+        </trans-unit>
+        <trans-unit id="6039">
+            <source>submenu.visor.imagenes</source>
+            <target>Viewer Images</target>
+        </trans-unit>
+        <trans-unit id="6040">
+            <source>submenu.video.seguridad</source>
+            <target>Video Security</target>
+        </trans-unit>
+        <trans-unit id="6041">
+            <source>submenu.carta.modelo</source>
+            <target>Model Letter</target>
+        </trans-unit>
+        <trans-unit id="6042">
+            <source>submenu.herramientas.google</source>
+            <target>Google Tools</target>
+        </trans-unit>
+        <trans-unit id="6043">
+            <source>submenu.sincronizar.datos</source>
+            <target>Synchronize Data</target>
+        </trans-unit>
+        <trans-unit id="6044">
+            <source>submenu.gestionar.archivos</source>
+            <target>Manage Files</target>
+        </trans-unit>
+        <trans-unit id="6045">
+            <source>submenu.asistencia.tecnica</source>
+            <target>Technical assistance</target>
+        </trans-unit>
+        <trans-unit id="6046">
+            <source>submenu.gestion.documental</source>
+            <target>Documentary Management</target>
+        </trans-unit>
+        <trans-unit id="6047">
+            <source>submenu.notas</source>
+            <target>Notes</target>
+        </trans-unit>
+        <trans-unit id="6048">
+            <source>submenu.administrador.web</source>
+            <target>Web Administrator</target>
+        </trans-unit>
+        <trans-unit id="6049">
+            <source>submenu.analisis.web</source>
+            <target>Web Analysis</target>
+        </trans-unit>
+        <trans-unit id="6050">
+            <source>submenu.administrador.bd</source>
+            <target>Database Administrator</target>
+        </trans-unit>
+        <trans-unit id="6051">
+            <source>submenu.neumaticos</source>
+            <target>Tires</target>
+        </trans-unit>
+        <trans-unit id="6052">
+            <source>submenu.gasolina.diesel</source>
+            <target>Diesel gasoline</target>
+        </trans-unit>
+        <trans-unit id="6053">
+            <source>submenu.auditoria</source>
+            <target>Audit</target>
+        </trans-unit>
+        <trans-unit id="6054">
+            <source>submenu.divisas</source>
+            <target>Foreign exchange</target>
+        </trans-unit>
+        <trans-unit id="6055">
+            <source>submenu.buscar.empleado</source>
+            <target>Search Employee</target>
+        </trans-unit>
+        <trans-unit id="6056">
+            <source>submenu.financiacion</source>
+            <target>Financing</target>
+        </trans-unit>
+
+
+        <!--mensajes-->
+        <trans-unit id="201">
+            <source>hola</source>
+            <target>Hello</target>
+        </trans-unit>
+        <trans-unit id="202">
+            <source>mensaje.email.registro</source>
+            <target>To complete the validation of your account - please visit</target>
+        </trans-unit>
+
+        <!--30-11-2017-->
+        <trans-unit id="3010001">
+            <source>verificacion.robots</source>
+            <target> If you see this, do not fill in the following field! </target>
+        </trans-unit>
+        <trans-unit id="3010002">
+            <source>excepcion.robots</source>
+            <target> Not a person. </target>
+        </trans-unit>
+        <trans-unit id="3010003">
+            <source>tipo</source>
+            <target> Type </target>
+        </trans-unit>
+        <trans-unit id="3010004">
+            <source>imagenes</source>
+            <target> Images </target>
+        </trans-unit>
+        <trans-unit id="3010005">
+            <source>no.archivos</source>
+            <target> No files found </target>
+        </trans-unit>
+
+        <!--elementos de la ficha tecnica-->
+            <trans-unit id="3010006">
+                <source>ficha.tecnica.posicion.motor</source>
+                <target> Engine position </target>
+            </trans-unit>
+            <trans-unit id="3010007">
+                <source>ficha.tecnica.distribucion</source>
+                <target> Distribution </target>
+            </trans-unit>
+            <trans-unit id="3010008">
+                <source>ficha.tecnica.numero.cilindros</source>
+                <target> Number of cylinders </target>
+            </trans-unit>
+            <trans-unit id="3010009">
+                <source>ficha.tecnica.valvulas.cilindros</source>
+                <target> Valves per cylinder </target>
+            </trans-unit>
+            <trans-unit id="3010010">
+                <source>ficha.tecnica.cilindrada</source>
+                <target> Displacement (cc) </target>
+            </trans-unit>
+            <trans-unit id="3010011">
+                <source>ficha.tecnica.potencia.maxima</source>
+                <target> Maximum power </target>
+            </trans-unit>
+            <trans-unit id="3010012">
+                <source>ficha.tecnica.motor.maxima</source>
+                <target> Maximum torque </target>
+            </trans-unit>
+            <trans-unit id="3010013">
+                <source>ficha.tecnica.diametro.carrera</source>
+                <target> Diameter x Stroke (mm) </target>
+            </trans-unit>
+            <trans-unit id="3010014">
+                <source>ficha.tecnica.alimentacion</source>
+                <target> Food </target>
+            </trans-unit>
+            <trans-unit id="3010015">
+                <source>ficha.tecnica.caja.cambio</source>
+                <target> Box of change </target>
+            </trans-unit>
+            <trans-unit id="3010016">
+                <source>ficha.tecnica.desarrollos</source>
+                <target> Developments (km / h at 1000 rpm) </target>
+            </trans-unit>
+            <trans-unit id="3010017">
+                <source>ficha.tecnica.marcha.atras</source>
+                <target> Reverse </target>
+            </trans-unit>
+            <trans-unit id="3010018">
+                <source>ficha.tecnica.grupo.final</source>
+                <target> Final group </target>
+            </trans-unit>
+            <trans-unit id="3010019">
+                <source>ficha.tecnica.traccion</source>
+                <target> Traction </target>
+            </trans-unit>
+            <trans-unit id="3010020">
+                <source>ficha.tecnica.suspencion.delantera</source>
+                <target> Front suspension </target>
+            </trans-unit>
+            <trans-unit id="3010021">
+                <source>ficha.tecnica.suspencion.trasera</source>
+                <target> Rear suspension </target>
+            </trans-unit>
+            <trans-unit id="3010022">
+                <source>ficha.tecnica.frenos.delanteros</source>
+                <target> Front brakes </target>
+            </trans-unit>
+            <trans-unit id="3010023">
+                <source>ficha.tecnica.frenos.traseros</source>
+                <target> Rear brakes </target>
+            </trans-unit>
+            <trans-unit id="3010024">
+                <source>ficha.tecnica.neumaticos</source>
+                <target> Tires </target>
+            </trans-unit>
+            <trans-unit id="3010025">
+                <source>ficha.tecnica.llantas</source>
+                <target> Tires </target>
+            </trans-unit>
+            <trans-unit id="3010026">
+                <source>ficha.tecnica.tipo.direccion</source>
+                <target> Type of address </target>
+            </trans-unit>
+            <trans-unit id="3010027">
+                <source>ficha.tecnica.radio.giro</source>
+                <target> Turn radius (between curbs) </target>
+            </trans-unit>
+            <trans-unit id="3010028">
+                <source>ficha.tecnica.vueltas.volante</source>
+                <target>Vueltas de volante de tope a tope</target>
+            </trans-unit>
+            <trans-unit id="3010029">
+                <source>ficha.tecnica.largo</source>
+                <target>Largo (milímetros)</target>
+            </trans-unit>
+            <trans-unit id="3010030">
+                <source>ficha.tecnica.ancho</source>
+                <target>Ancho (milímetros)</target>
+            </trans-unit>
+            <trans-unit id="3010031">
+                <source>ficha.tecnica.alto</source>
+                <target>Alto (milímetros)</target>
+            </trans-unit>
+            <trans-unit id="3010032">
+                <source>ficha.tecnica.distancia.ejes</source>
+                <target>Distancia entre ejes (mm)</target>
+            </trans-unit>
+            <trans-unit id="3010033">
+                <source>ficha.tecnica.via.delantera</source>
+                <target>Vía delantera (mm)</target>
+            </trans-unit>
+            <trans-unit id="3010034">
+                <source>ficha.tecnica.via.trasera</source>
+                <target>Vía trasera (mm)</target>
+            </trans-unit>
+            <trans-unit id="3010035">
+                <source>ficha.tecnica.peso</source>
+                <target>Peso (Kg)</target>
+            </trans-unit>
+            <trans-unit id="3010036">
+                <source>ficha.tecnica.capacidad.maletero</source>
+                <target>Capacidad del maletero</target>
+            </trans-unit>
+            <trans-unit id="3010037">
+                <source>ficha.tecnica.deposito.combustible</source>
+                <target>Depósito combustible (litros)</target>
+            </trans-unit>
+            <trans-unit id="3010038">
+                <source>ficha.tecnica.velocidad.maxima</source>
+                <target>Velocidad máxima (Km/h)</target>
+            </trans-unit>
+            <trans-unit id="3010039">
+                <source>ficha.tecnica.aceleracion</source>
+                <target>Aceleración de 0-100 Km/h (seg)</target>
+            </trans-unit>
+            <trans-unit id="3010040">
+                <source>ficha.tecnica.consumo.urbano</source>
+                <target>Consumo urbano</target>
+            </trans-unit>
+            <trans-unit id="3010041">
+                <source>ficha.tecnica.consumo.extraurbano</source>
+                <target>Consumo extraurbano (l/100 Km)</target>
+            </trans-unit>
+            <trans-unit id="3010042">
+                <source>ficha.tecnica.consumo.medio</source>
+                <target>Consumo medio (l/100 Km)</target>
+            </trans-unit>
+            <trans-unit id="3010043">
+                <source>ficha.tecnica.emisiones.co2</source>
+                <target>Emisiones de CO2 (gr/Km)</target>
+            </trans-unit>
+            <trans-unit id="3010044">
+                <source>ficha.tecnica.combustible</source>
+                <target>Combustible</target>
+            </trans-unit>
+
+            <trans-unit id="3010045">
+                <source>registrar.taller</source>
+                <target>Registrar taller</target>
+            </trans-unit>
+            <trans-unit id="3010046">
+                <source>no.hay.resultados</source>
+                <target>No se han encontrado resultados</target>
+            </trans-unit>
+            <trans-unit id="3010047">
+                <source>error.servidor</source>
+                <target>Ha ocurrido un error en el servidor</target>
+            </trans-unit>
+            <trans-unit id="3010048">
+                <source>contacte.admin</source>
+                <target>Si este error continua póngase en contacto con el administrador</target>
+            </trans-unit>
+            <trans-unit id="3010049">
+                <source>vehiculo.no.encontrado</source>
+                <target>El vehículo no fue encontrado</target>
+            </trans-unit>
+            <trans-unit id="3010050">
+                <source>elemento.no.encontrado</source>
+                <target>El elemento no fue encontrado</target>
+            </trans-unit>
+
+	</body>
+	</file>
+</xliff>

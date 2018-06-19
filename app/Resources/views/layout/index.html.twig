@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% if objetos|length > 0 %}
+        {#{% include 'layouts/modal_eliminar.html.twig' %}#}
+	    <n></n>
+		{% if ruta is defined %}
+	    	<a href="{{ruta}}" class="bt bt-primary"><i class="fa fa-plus-circle"></i> Adicionar {{ singularObjeto }}</a>
+		{% endif %}
+
+		<form class="filtrar">
+			{#TODO cambiar el color del placeholder a casi blanco#}
+	    	<input placeholder="Teclee para filtrar" class="text-filtrar" id="filtrar" />
+	    </form>
+	    <br/>
+	    <br/>
+	    <br/>
+	    <n></n>
+	    <div class="tabla-filtrar">
+	    	<div id="contenidoTabla">
+	    		{% block tabla %}{% endblock %}
+	    	</div>
+	    	<div id="textoNoEncontrado" class="hide">
+	    		<hr/>
+	    		<h5 class="texto-claro texto-centro">No se han encontrado {{ pluralObjeto }}</h5>
+	    	</div>
+	    </div>
+	{% else %}
+	    <div class="form-pequenno-editar">
+	        <h5 class="texto-claro texto-centro">No se han encontrado {{ pluralObjeto }}</h5>
+			<br>
+            {% if ruta is defined %}
+				<a href="{{ruta}}" class="bt bt-primary ancho-full"><i class="fa fa-plus-circle"></i> Adicionar {{ singularObjeto }}</a>
+            {% endif %}
+	    </div>
+	{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		$('#filtrar').keyup(function() {
+		  filtrar();
+		});
+
+	});
+
+	let = textoNoEncontrado = $('#textoNoEncontrado').text().toString();
+
+	var filtrar = function (){
+	    filas = $('.tabla-filtrar table tr');
+	    for (var i = filas.length - 1; i >= 1; i--) {
+	        if (filas.eq(i).text().toLowerCase().indexOf($('#filtrar').val().toLowerCase()) == -1) {
+	            filas.eq(i).addClass('hide');
+	        } else {
+	            filas.eq(i).removeClass('hide');
+	        }
+	    }
+
+	    filasOcultas = $('.tabla-filtrar table tr.hide');
+
+	    if(filas.length > (filasOcultas.length+1)){
+	    	$('#textoNoEncontrado').addClass('hide');
+	    	$('#contenidoTabla').removeClass('hide');
+	    }else{
+	        $('#textoNoEncontrado h5').eq(0).text(textoNoEncontrado+" para: "+$('#filtrar').val());
+            $('#textoNoEncontrado').addClass('texto-claro texto-centro');
+	    	$('#textoNoEncontrado').removeClass('hide');
+	    	$('#contenidoTabla').addClass('hide');
+	    }
+
+
+	}
+</script>
+{% endblock %}

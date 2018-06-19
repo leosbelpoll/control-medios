@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es_Es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Control de Medios{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/logo.png') }}"/>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/bootstrap/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/bootstrap/css/bootstrap-datepicker.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendors/font-awesome/css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendors/material-design/css/materialdesignicons.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendors/alertify/css/alertify.core.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendors/alertify/css/alertify.bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendors/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}"/>
+
+    <link rel="stylesheet" href="{{ asset('vendors/flags/flags.css') }}"/>
+
+    <link rel="stylesheet/less" href="{{ asset('css/navbar.less') }}"/>
+    <link rel="stylesheet/less" href="{{ asset('css/base.less') }}"/>
+    <link rel="stylesheet/less" href="{{ asset('css/baseOtro.less') }}"/>
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashBag.all %}
+                {% for message in messages %}
+                    <div class="{{ type }}">
+                        {% if message == 'registration.flash.user_created' %}
+                            <div class="mensaje-success">
+                                <i class="fa fa-check"></i>
+                                <span>{{ message|trans({}, 'FOSUserBundle') }}</span>
+                            </div>
+                            <br/>
+                        {% else %}
+                            <span>{{ message|trans({}, 'FOSUserBundle') }}</span>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        <br/>
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+    </div>
+<script src="{{ asset('vendors/jQuery/jquery.min.js') }}"></script>
+<script src="{{ asset('vendors/bootstrap/js/bootstrap.js') }}"></script>
+<script src="{{ asset('vendors/bootstrap/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('vendors/alertify/js/alertify.js') }}"></script>
+<script src="{{ asset('vendors/highcharts/highcharts.js') }}"></script>
+<script src="{{ asset('vendors/select2/js/select2.full.min.js') }}"></script>
+
+<script src="{{ asset('js/pantallaCargando.js') }}"></script>
+<script src="{{ asset('js/less.min.js') }}"></script>
+<script src="{{ asset('js/base.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

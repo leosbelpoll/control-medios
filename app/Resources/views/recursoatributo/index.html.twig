@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Recursoatributos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Recurso</th>
+                <th>Atributo</th>
+                <th>Valor</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recursoAtributo in recursoAtributos %}
+            <tr>
+                <td>{{ recursoAtributo.recurso }}</td>
+                <td>{{ recursoAtributo.atributo }}</td>
+                <td>{{ recursoAtributo.valor }}</td>
+                <td>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('recursoatributo_new') }}">Create a new recursoAtributo</a>
+        </li>
+    </ul>
+{% endblock %}

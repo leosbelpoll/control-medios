@@ -1,0 +1,71 @@
+{% embed 'layout/index.html.twig' with {objetos: recursos, pluralObjeto: "Recursos", singularObjeto: "Recurso"} %}
+    {% block tabla %}
+            <!-- <a href="#" class="bt bt-primary" style="display:block; margin-top: -70px; width: 200px"><i class="fa fa-plus-circle"></i> Adicionar {{ singularObjeto }}</a> -->
+            <div class="btn-group" style="position: relative; margin-top: -110px; width: 200px">
+              <div class="btn-group">
+                <button type="button" class="bt bt-primary dropdown-toggle" data-toggle="dropdown">
+                  Adicionar Recurso
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    {% for componente in componentes %}
+                        <li><a href="{{path('recurso_new', {id:componente.id})}}">{{componente.nombre}}</a></li>
+                    {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    {% for atributo in recursos[0].componente.atributos %}
+                        {% if atributo.visibleparatablas %}
+                            <th>{{ atributo.nombre }}</th>
+                        {% endif %}
+                    {% endfor %}
+                    <th>Componente</th>
+                    <th>Responsable</th>
+                    <th>Fecha de Creacion</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for recurso in recursos %}
+                    <tr>
+                        {% for atributo in recursos[0].componente.atributos %}
+                            {% if atributo.visibleparatablas %}
+                                {% set encontro = false %}
+                                {% for rc in recurso.recursosatributos %}
+                                    {% if rc.atributo == atributo %}
+                                        {% set encontro = true %}
+                                        <td>
+                                            {% if rc.valor %}
+                                                {{ rc.valor }}
+                                            {% else %}
+                                                <i class="mdi mdi-close"></i>
+                                            {% endif %}
+                                        </td>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if not encontro %}
+                                    <td><i class="mdi mdi-close"></i></td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <td>{{ recurso.componente }}</td>
+                        <td>{{ recurso.responsable }}</td>
+                        <td>{% if recurso.fechacreacion %}{{ recurso.fechacreacion|date('Y-m-d') }}{% endif %}</td>
+                        <td>
+                            <a href="{{ path('recurso_show', {id: recurso.id}) }}" class="icono icono-info"><i class=" mdi mdi-information-outline"></i></a>
+                            <a href="{{ path('recurso_operacion_new', {id: recurso.id}) }}" class="icono icono-operacion"><i class=" mdi mdi-worker"></i></a>
+                            <a href="{{ path('recurso_edit', {id: recurso.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
+                            <a href="#" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
+                            {%  if recurso.componente.nombre == 'Unidad Central' %}
+                            <a href="{{ path('recurso_ficha_tecnica', {id: recurso.id}) }}" class="icono icono-info"><i class=" mdi mdi-file-document"></i></a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    {% endblock %}
+{% endembed %}

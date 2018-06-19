@@ -1,0 +1,27 @@
+{% embed 'layout/index.html.twig' with {objetos: atributos, pluralObjeto: 'Atributos', singularObjeto: 'Atributo', ruta: path('atributo_new') } %}
+    {% block tabla %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th class="text-center">Visible en tablas</th>
+                <th>Descripcion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for atributo in atributos %}
+            <tr>
+                <td>{{ atributo.nombre }}</td>
+                <td class="text-center">{% if atributo.visibleparatablas %}<i class="mdi mdi-check-circle"></i>{% else %}<i class="mdi mdi-close"></i>{% endif %}</td>
+                <td>{{ atributo.descripcion }}</td>
+                <td>
+                    <a href="{{ path('atributo_edit', {id: atributo.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
+                    <a href="#" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+{% endembed %}

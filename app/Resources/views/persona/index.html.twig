@@ -1,0 +1,27 @@
+{% embed 'layout/index.html.twig' with {objetos: personas, pluralObjeto: 'Personas', singularObjeto: 'Persona', ruta: path('persona_new') } %}
+    {% block tabla %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Carnet</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for persona in personas %}
+            <tr>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.apellidos }}</td>
+                <td>{{ persona.ci }}</td>
+                <td>
+                    <a href="{{ path('persona_edit', {id: persona.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
+                    <a href="#" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,14 @@
+.navbar-inverse {
+  border-bottom: none;
+  min-height: 0;
+}
+.navbar-inverse .navbar-brand {
+  margin-top: -4px;
+  padding: 15px 15px 0 0;
+  font-family: serif;
+  font-size: 2em;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-brand img {
+  margin: -5px 0 0 0;
+}
