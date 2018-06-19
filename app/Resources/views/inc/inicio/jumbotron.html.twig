@@ -1,0 +1,8 @@
+<div class="jumbotron">
+    <h4>{{titulo}}</h4>
+    <p>{{texto}}</p>
+    {% if link is defined %}
+        <br>
+        <p><a class="btn btn-primary btn-block" href="{{ link }}">Ver</a></p>
+    {% endif %}
+</div>

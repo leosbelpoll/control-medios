@@ -20,6 +20,34 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 class RecursoController extends Controller
 {
 
+    public function reportePcsAction()
+    {
+        
+        return $this->render('inc/inicio/jumbotron.html.twig', [
+            'titulo' => 'Cantidad de PCs: #',
+            'texto' => '',
+            'link' => 'sad'
+        ]);
+    }
+
+    public function reporteServidoresAction()
+    {
+        return $this->render('inc/inicio/jumbotron.html.twig', [
+            'titulo' => 'Cantidad de Servidores: #',
+            'texto' => '',
+            'link' => 'sad'
+        ]);
+    }
+
+    public function reporteLaptosAction()
+    {
+        return $this->render('inc/inicio/jumbotron.html.twig', [
+            'titulo' => 'Cantidad de Laptos: #',
+            'texto' => '',
+            'link' => 'sad'
+        ]);
+    }
+
     /**
      *
      * @Route("recurso/{id}/imprimir_ficha_tecnica", name="imprimir_ficha_tecnica")

@@ -1,4 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>Pagina de inicio</h1>
+    <div class="row">
+        <div class="col-xs-4">
+            {{render(controller('AppBundle:Recurso:reporteServidores'))}}
+        </div>
+        <div class="col-xs-4">
+            {{render(controller('AppBundle:Recurso:reportePcs'))}}
+        </div>
+        <div class="col-xs-4">
+            {{render(controller('AppBundle:Recurso:reporteLaptos'))}}
+        </div>
+    </div>
 {% endblock %}
