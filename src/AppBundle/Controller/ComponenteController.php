@@ -103,19 +103,14 @@ class ComponenteController extends Controller
     /**
      * Deletes a componente entity.
      *
-     * @Route("/{id}", name="componente_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="componente_delete")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, Componente $componente)
     {
-        $form = $this->createDeleteForm($componente);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($componente);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($componente);
+        $em->flush();
 
         return $this->redirectToRoute('componente_index');
     }

@@ -17,7 +17,7 @@
                 <td>{{ atributo.descripcion }}</td>
                 <td>
                     <a href="{{ path('atributo_edit', {id: atributo.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
-                    <a href="#" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
+                    <a href="{{path('atributo_delete', {id: atributo.id})}}" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
                 </td>
             </tr>
         {% endfor %}

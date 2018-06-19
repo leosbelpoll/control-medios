@@ -101,19 +101,14 @@ class DepartamentoController extends Controller
     /**
      * Deletes a departamento entity.
      *
-     * @Route("/{id}", name="departamento_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="departamento_delete")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, Departamento $departamento)
     {
-        $form = $this->createDeleteForm($departamento);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($departamento);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($departamento);
+        $em->flush();
 
         return $this->redirectToRoute('departamento_index');
     }

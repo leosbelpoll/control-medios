@@ -4,7 +4,6 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Descripcion</th>
                 <th></th>
             </tr>
         </thead>
@@ -12,9 +11,9 @@
         {% for departamento in departamentos %}
             <tr>
                 <td>{{ departamento.nombre }}</td>
-                <td>{{ departamento.descripcion }}</td>
                 <td>
-
+                    <a href="{{ path('departamento_edit', {id: departamento.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
+                    <a href="{{path('departamento_delete', {id: departamento.id})}}" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
                 </td>
             </tr>
         {% endfor %}

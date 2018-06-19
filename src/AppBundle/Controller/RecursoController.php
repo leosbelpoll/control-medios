@@ -58,7 +58,7 @@ class RecursoController extends Controller
         $response->headers->set('Cache-Control', 'maxage=1');
         $response->headers->set('Content-Disposition', $dispositionHeader);
 
-        return $response;        
+        return $response;
     }
 
 
@@ -205,21 +205,23 @@ class RecursoController extends Controller
     /**
      * Deletes a recurso entity.
      *
-     * @Route("recurso/{id}", name="recurso_delete")
-     * @Method("DELETE")
+     * @Route("recurso/{id}/delete/componente/{idComponente}", name="recurso_delete")
+     * @Method("GET")
      */
-    public function deleteAction(Request $request, Recurso $recurso)
+    public function deleteAction(Request $request, $id, $idComponente)
     {
-        $form = $this->createDeleteForm($recurso);
-        $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($recurso);
-            $em->flush();
+        $recurso = $em->getRepository('AppBundle:Recurso')->find($id);
+
+        $em->remove($recurso);
+        $em->flush();
+
+        if($idComponente == -1){
+            return $this->redirectToRoute('recurso_index');
         }
 
-        return $this->redirectToRoute('recurso_index');
+        return $this->redirectToRoute('recurso_index_by_componente', ['id'=> $idComponente]);
     }
 
     /**

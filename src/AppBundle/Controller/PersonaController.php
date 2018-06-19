@@ -101,19 +101,14 @@ class PersonaController extends Controller
     /**
      * Deletes a persona entity.
      *
-     * @Route("/{id}", name="persona_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="persona_delete")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, Persona $persona)
     {
-        $form = $this->createDeleteForm($persona);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($persona);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($persona);
+        $em->flush();
 
         return $this->redirectToRoute('persona_index');
     }

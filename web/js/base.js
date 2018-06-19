@@ -44,4 +44,14 @@ $(document).ready(function () {
         title: 'Información'
     });
 
+    $('.icono-eliminar').click(function (ev) {
+        if(!confirm('¿Desea eliminar realmente?')){
+            ev.preventDefault();
+            ev.stopPropagation();
+        }else{
+            ev.stopPropagation();
+        }
+
+    });
+
 });

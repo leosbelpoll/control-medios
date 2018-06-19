@@ -101,19 +101,14 @@ class AtributoController extends Controller
     /**
      * Deletes a atributo entity.
      *
-     * @Route("/{id}", name="atributo_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="atributo_delete")
+     * @Method("GET")
      */
     public function deleteAction(Request $request, Atributo $atributo)
     {
-        $form = $this->createDeleteForm($atributo);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($atributo);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($atributo);
+        $em->flush();
 
         return $this->redirectToRoute('atributo_index');
     }

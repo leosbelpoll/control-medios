@@ -58,7 +58,7 @@
                             <a href="{{ path('recurso_show', {id: recurso.id}) }}" class="icono icono-info"><i class=" mdi mdi-information-outline"></i></a>
                             <a href="{{ path('recurso_operacion_new', {id: recurso.id}) }}" class="icono icono-operacion"><i class=" mdi mdi-worker"></i></a>
                             <a href="{{ path('recurso_edit', {id: recurso.id}) }}" class="icono icono-editar"><i class="mdi mdi-lead-pencil"></i></a>
-                            <a href="#" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
+                            <a href="{{ path('recurso_delete', {id: recurso.id, idComponente: -1}) }}" class="icono icono-eliminar"><i class="icono-eliminar mdi mdi-window-close"></i></a>
                             {%  if recurso.componente.nombre == 'Unidad Central' %}
                             <a href="{{ path('recurso_ficha_tecnica', {id: recurso.id}) }}" class="icono icono-info"><i class=" mdi mdi-file-document"></i></a>
                             {% endif %}
