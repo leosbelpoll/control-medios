@@ -35,7 +35,6 @@ class FrontController extends Controller
         foreach ($componentes as $componente){
             $subMenu = array(
                 'ruta'      => $this->generateUrl('recurso_index_by_componente', array('id'=>$componente->getId())),
-                'tipoIcono' => 'img',
                 'icono'     => $componente->getIcono(),
                 'posiblesRutas' => [],
                 'titulo'    => $componente->getNombre()
@@ -45,8 +44,7 @@ class FrontController extends Controller
 
         $subMenu = array(
             'ruta'      => $this->generateUrl('recurso_index'),
-            'tipoIcono' => 'icon',
-            'icono'     => 'view-headline',
+            'icono'     => 'uploads/iconos/all.png',
             'posiblesRutas' => ['recurso_index'],
             'titulo'    => 'Todos'
         );
